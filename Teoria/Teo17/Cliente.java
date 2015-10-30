@@ -11,8 +11,7 @@ public class Cliente{
 		String cadena;
 		PrintWriter salida;
 
-		
-			socket = new Socket("localhost", 80);
+		socket = new Socket("localhost", 80);
 
 		salida = new PrintWriter(socket.getOutputStream());
 		entrada = new InputStreamReader(socket.getInputStream());
