@@ -11,24 +11,33 @@ public class Servidor{
 		BufferedReader entrada;
 		PrintWriter salida;
 		String cadena;
+		int i = 0;
 
 		servidor = new ServerSocket(9090);
 		System.out.println("Server up and running!! :D");
-		
-		cliente = servidor.accept();
-		System.out.println("1 user connected, :D");
+		while(i < 3){
 
-		isr = new InputStreamReader(cliente.getInputStream());
-		entrada = new BufferedReader(isr);
-		salida = new PrintWriter(cliente.getOutputStream());
+			cliente = servidor.accept();
+			System.out.println("1 user connected, :D");
 
-		salida.println("Bienvenido vato!!, teclea algo :)");
-		salida.flush();
+			isr = new InputStreamReader(cliente.getInputStream());
+			entrada = new BufferedReader(isr);
+			salida = new PrintWriter(cliente.getOutputStream());
 
-		cadena = entrada.readLine();
-		System.out.println("El vato tecleo " + cadena);
-		salida.println("Ey ese, usted tecleo: " + cadena);
-		salida.flush();
+			salida.println("Bienvenido vato!!, teclea algo :)");
+			salida.flush();
+
+			cadena = entrada.readLine();
+			System.out.println("El vato tecleo " + cadena);
+			salida.println("Ey ese, usted tecleo: " + cadena);
+			salida.flush();
+
+			cliente.close();
+			salida.close();
+			entrada.close();
+
+			i++;
+		}
 
 
 	}

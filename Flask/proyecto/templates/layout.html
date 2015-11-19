@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">PAMN</h1>
+      </div>
+    </header>
+    
+    {% block content %}
+
+    {% endblock %}
+  <footer>
+    <h2>Este es el footer</h2>
+  </footer>
+  </body>
+</html>
