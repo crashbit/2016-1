@@ -3,17 +3,38 @@
   <head>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
     <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
-        <h1 class="title">PAMN</h1>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">PAMN</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">uno</a></li>
+            <li><a href="#dos">dos</a></li>
+            <li><a href="#tres">tres</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    </header>
+    </nav>
+
+    <div class="container">
+
     
     {% block content %}
 
     {% endblock %}
+
+    </div><!-- /.container -->
   <footer>
     <h2>Este es el footer</h2>
   </footer>
